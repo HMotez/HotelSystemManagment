@@ -1,4 +1,4 @@
-package Booking;
+package Hotel;
 public class Room {
     // Room types
     public enum RoomType {
@@ -22,6 +22,8 @@ public class Room {
     public String getId() {
         return id;
     }
+
+    public String getRoomImage() {return roomImage;}
 
     public RoomType getRoomType() {
         return roomType;
