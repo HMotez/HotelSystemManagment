@@ -1,75 +1,52 @@
-
-package Hotel;
-import User.*;
-
-
+package Booking;
 public class Room {
-    //S:STANDARD
-    //D:DELUXE
-    //E:Executive
-    //F:FAMILY
-    public enum RoomType {S1,S2,D1,D2,E1,E2,F1,F2,F3,F4}
+    // Room types
+    public enum RoomType {
+        S1, S2, D1, D2, E1, E2, F1, F2, F3, F4
+    }
 
-    private String roomName;
+    private String id;
     private String roomImage;
     private double pricePerNight;
     private RoomType roomType;
+    private int numberOfRooms; // Number of available rooms of this type
 
-
-    public Room() {}
-
-
-    public Room( String roomName, String roomImage, double pricePerNight, RoomType roomType) {
-        this.roomName = roomName;
+    public Room(String id, String roomImage, double pricePerNight, RoomType roomType, int numberOfRooms) {
+        this.id = id;
         this.roomImage = roomImage;
         this.pricePerNight = pricePerNight;
         this.roomType = roomType;
+        this.numberOfRooms = numberOfRooms;
     }
 
-
-    public String getRoomName() {
-        return roomName;
-    }
-
-    public void setRoomName(String roomName) {
-        this.roomName = roomName;
-    }
-
-    public String getRoomImage() {
-        return roomImage;
-    }
-
-    public void setRoomImage(String roomImage) {
-        this.roomImage = roomImage;
-    }
-
-    public double getPricePerNight() {
-        return pricePerNight;
-    }
-
-    public void setPricePerNight(double pricePerNight) {
-        this.pricePerNight = pricePerNight;
+    public String getId() {
+        return id;
     }
 
     public RoomType getRoomType() {
         return roomType;
     }
 
-    public void setRoomType(RoomType roomType) {
-        this.roomType = roomType;
+    public double getPricePerNight() {
+        return pricePerNight;
     }
 
+    public int getNumberOfRooms() {
+        return numberOfRooms;
+    }
+
+    public void reduceAvailableRooms() {
+        if (numberOfRooms > 0) {
+            numberOfRooms--;
+        }
+    }
+
+    public void increaseAvailableRooms() {
+        numberOfRooms++;
+    }
 
     @Override
     public String toString() {
-        return "Room{" +
-                " roomName='" + roomName + '\'' +
-                ", roomImage='" + roomImage + '\'' +
-                ", pricePerNight=" + pricePerNight +
-                ", roomType=" + roomType +
-                '}';
+        return "Room ID: " + id + ", Type: " + roomType + ", Price: " + pricePerNight + ", Available Rooms: " + numberOfRooms;
     }
-
-
-
 }
