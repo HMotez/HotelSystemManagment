@@ -1,4 +1,4 @@
-package User;
+package UserStaff;
 import java.util.Date;
 
 public class Technical extends Staff {

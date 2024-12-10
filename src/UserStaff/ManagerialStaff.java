@@ -1,4 +1,4 @@
-package User;
+package UserStaff;
 
 public class ManagerialStaff extends Staff {
 

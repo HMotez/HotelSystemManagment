@@ -1,4 +1,4 @@
-package User;
+package UserStaff;
 
 import java.math.BigDecimal;
 import java.util.Date;
