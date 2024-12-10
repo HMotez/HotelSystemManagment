@@ -12,4 +12,16 @@ public class DataBaseConnection {
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
+
+    public static void closeConnection(Connection connection) {
+        if (connection != null) {
+            try {
+                connection.close();
+                System.out.println("Connection closed successfully.");
+            } catch (SQLException e) {
+                System.err.println("Failed to close connection: " + e.getMessage());
+            }
+        }
+    }
+
 }

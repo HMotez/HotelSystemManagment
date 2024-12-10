@@ -126,8 +126,7 @@ public class Main {
 
 
 
-
-
+        HotelDB adminDB = new HotelDB();
         boolean Running = true;
         while (Running) {
             System.out.println("\n *** HotelAdmin Manipulation To DataBase HotelManagement ***");
@@ -158,7 +157,7 @@ public class Main {
                     System.out.println("Enter Number of Rooms: ");
                     int numRooms = scanner.nextInt();
                     Room newRoom = new Room(id, image, price, type, numRooms);
-                    admin.adDRoom(newRoom);
+                    adminDB.adDRoom(newRoom);
                     break;
 
                 case 2:
@@ -175,14 +174,14 @@ public class Main {
                     System.out.println("Enter new Number of Rooms: ");
                     int newNumRooms = scanner.nextInt();
                     Room updatedRoom = new Room(updateId, newImage, newPrice, newType, newNumRooms);
-                    admin.updatERoom(updateId, updatedRoom);
+                    adminDB.updatERoom(updateId, updatedRoom);
                     break;
 
                 case 3:
                     // Delete a room
                     System.out.println("Enter Room ID to delete: ");
                     String deleteId = scanner.nextLine();
-                    admin.removERoom(deleteId);
+                    adminDB.removERoom(deleteId);
                     break;
 
                 case 4:
@@ -204,7 +203,7 @@ public class Main {
                         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                         Date dateIn = dateFormat.parse(checkInDate);
                         Date dateOut = dateFormat.parse(checkOutDate);
-                        admin.BooKRoom(guestId, bookerId, roomType, dateIn, dateOut);
+                        adminDB.BooKRoom(guestId, bookerId, roomType, dateIn, dateOut);
                     } catch (Exception e) {
                         System.out.println("Invalid date format. Please use yyyy-mm-dd.");
                     }
@@ -212,12 +211,12 @@ public class Main {
 
                 case 5:
                     // Display rooms
-                    admin.displaYRooms();
+                    adminDB.displaYRooms();
                     break;
 
                 case 6:
                     // Display bookings
-                    admin.displaYBookings();
+                    adminDB .displaYBookings();
                     break;
 
                 case 7:

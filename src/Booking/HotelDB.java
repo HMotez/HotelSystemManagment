@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class HotelAdminDB {
+public class HotelDB {
     private List<Room> rooms;
     private List<Booking> bookings;
 
-    public HotelAdminDB() {
+    public HotelDB() {
         rooms = new ArrayList<>();
         bookings = new ArrayList<>();
     }
@@ -62,6 +62,9 @@ public class HotelAdminDB {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+
     }
 
     // Remove room from database
